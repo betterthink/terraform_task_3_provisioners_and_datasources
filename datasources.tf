@@ -1,5 +1,5 @@
 data "azurerm_resource_group" "example" {
-  name = "terraform-ts3-rg" 
+  name = "terraform-ts3-rg"
 }
 
 data "azurerm_virtual_network" "main" {
@@ -24,6 +24,5 @@ data "azurerm_virtual_machine" "main" {
 }
 data "azurerm_public_ip" "example" {
   name                = "${var.prefix}-public-ip"
-  location            = data.azurerm_resource_group.example.location
   resource_group_name = data.azurerm_resource_group.example.name
 }
